@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Machine1"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="Context1"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="Record the registered users" org.eventb.core.identifier="business"/>
+<org.eventb.core.variable name="6" org.eventb.core.comment="Associate a customer and a least one car" org.eventb.core.identifier="customer_folder"/>
+<org.eventb.core.variable name="8" org.eventb.core.comment="Record the booked car" org.eventb.core.identifier="booking"/>
+<org.eventb.core.variable name="B" org.eventb.core.comment="Record which bay is occupied" org.eventb.core.identifier="bay_allocate"/>
+<org.eventb.core.variable name="O" org.eventb.core.comment="Associate a car an its repair(s)" org.eventb.core.identifier="car_repair"/>
+<org.eventb.core.variable name="R" org.eventb.core.comment="Associate a car with one bay and one mechanic" org.eventb.core.identifier="allocate_bay_mechanic"/>
+<org.eventb.core.event name="S" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="date_booking ≔∅" org.eventb.core.label="act10"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="time_booking ≔ ∅" org.eventb.core.label="act11"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="date_startRepair ≔ ∅" org.eventb.core.label="act12"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="time_startRepair ≔ ∅" org.eventb.core.label="act13"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="date_endRepair ≔ ∅" org.eventb.core.label="act14"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="time_endRepair ≔ ∅" org.eventb.core.label="act15"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="position ≔ ∅" org.eventb.core.label="act16"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="serviced_car ≔ ∅" org.eventb.core.label="act17"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="position_date ≔ ∅" org.eventb.core.label="act18"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="date_list ≔ ∅" org.eventb.core.label="act19"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="date_repair ≔ ∅" org.eventb.core.label="act20"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="repair_list ≔ ∅" org.eventb.core.label="act21"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="booking_waiting ≔ ∅" org.eventb.core.label="act22"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="T" org.eventb.core.comment="To register a new mechanic" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RegisterMechanic">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RegisterMechanic"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="U" org.eventb.core.comment="To delete a registered mechanic from the system" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeRegisterMechanic">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeRegisterMechanic"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="V" org.eventb.core.comment="To register a new customer" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RegisterCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RegisterCustomer"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="W" org.eventb.core.comment="To add a new car in a customer's folder" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UpdateCar">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UpdateCar"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="X" org.eventb.core.comment="Refined MakeBooking event to include date and time" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="MakeBookingDated">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MakeBooking"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="t"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="date of booking should be the current date" org.eventb.core.label="grd8" org.eventb.core.predicate="t = current_time"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="time_booking ≔ time_booking ∪ {t}" org.eventb.core.label="act6"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="time of booking should be the current time" org.eventb.core.label="grd5" org.eventb.core.predicate="d = current_date"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="date_booking ≔ date_booking ∪ {d}" org.eventb.core.label="act4"/>
+<org.eventb.core.parameter name="." org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="p ∈ POSITION ∖ ran(position)"/>
+<org.eventb.core.guard name="3" org.eventb.core.label="grd9" org.eventb.core.predicate="c ∉ serviced_car"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="ran(position) is finite so if it is not empty p is the new last element of ran(position)" org.eventb.core.label="grd7" org.eventb.core.predicate="position ≠ ∅ ⇒ p = max(ran(position)) + 1"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="booking_waiting ≔ booking_waiting ∪ {c}" org.eventb.core.comment="First the car is added in the list of waiting cars" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="position(c) ≔ p" org.eventb.core.comment="The booked car enter the queue with the last position" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="Y" org.eventb.core.comment="Refined EndBooking event to include date and time" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EndBookingDated">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="EndBooking"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="t"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="date of end repair should be the current date" org.eventb.core.label="grd8" org.eventb.core.predicate="d = current_date"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="time of end repair should be the current date" org.eventb.core.label="grd5" org.eventb.core.predicate="t = current_time"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="date_endRepair ≔ date_endRepair ∪ {d}" org.eventb.core.comment="date is recorded in dates of end repair." org.eventb.core.label="act4"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="time_endRepair ≔ time_endRepair ∪ {t}" org.eventb.core.comment="time is recorded in times of end repair." org.eventb.core.label="act5"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="date_repair(d) ≔ car_repair(c)" org.eventb.core.comment="The date of a repair is the date when it has been finished" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="position_date(d) ≔  p" org.eventb.core.comment="The date is classified at the last rank of ran(position_date)" org.eventb.core.label="act7"/>
+<org.eventb.core.parameter name="0" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="3" org.eventb.core.comment="The car should have been repaired" org.eventb.core.label="grd9" org.eventb.core.predicate="c ∉ serviced_car ∪ booking_waiting "/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd6" org.eventb.core.predicate="p ∈ POSITION ∖ ran(position_date)"/>
+<org.eventb.core.guard name="2" org.eventb.core.comment="ran(position_date) is finite so if it is not empty p is the new last element of ran(position_date)" org.eventb.core.label="grd7" org.eventb.core.predicate="position_date ≠ ∅ ⇒ p = max(ran(position_date)) + 1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="Z" org.eventb.core.comment="Refined AllocateBayMechanic event to include date and time" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AllocateBayMechanicDaTed">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AllocateBayMechanic"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="date_startRepair ≔ date_startRepair ∪ {d}" org.eventb.core.label="act6"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="The car should be the next car to be repaired, like this the order of booking is respected" org.eventb.core.label="grd13" org.eventb.core.predicate="c ∈ booking_waiting"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="The date of starting repair is the current date when the bay and mechanc &#13;&#10;are allocated" org.eventb.core.label="grd11" org.eventb.core.predicate="d = current_date"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="t"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="idem" org.eventb.core.label="grd12" org.eventb.core.predicate="t = current_time"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="time_startRepair ≔ time_startRepair ∪ {t}" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="serviced_car ≔ ∅" org.eventb.core.comment="The repair has started so the car is not the next car to be repaired any more" org.eventb.core.label="act10"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="[" org.eventb.core.target="Context2"/>
+<org.eventb.core.variable name="z" org.eventb.core.comment="Associate a mechanic to a repair he made" org.eventb.core.identifier="mecha_repair"/>
+<org.eventb.core.variable name="\" org.eventb.core.comment="record the date of booking" org.eventb.core.identifier="date_booking"/>
+<org.eventb.core.variable name="]" org.eventb.core.comment="record the time of booking" org.eventb.core.identifier="time_booking"/>
+<org.eventb.core.variable name="i" org.eventb.core.comment="function to order booked cars given their date of booking" org.eventb.core.identifier="position"/>
+<org.eventb.core.variable name="^" org.eventb.core.comment="record the date when the repair begins" org.eventb.core.identifier="date_startRepair"/>
+<org.eventb.core.variable name="_" org.eventb.core.comment="record the time when the repair begins" org.eventb.core.identifier="time_startRepair"/>
+<org.eventb.core.variable name="`" org.eventb.core.comment="record the date when the repair is finished" org.eventb.core.identifier="date_endRepair"/>
+<org.eventb.core.variable name="a" org.eventb.core.comment="record the time when the repair is finished" org.eventb.core.identifier="time_endRepair"/>
+<org.eventb.core.invariant name="b" org.eventb.core.label="inv1" org.eventb.core.predicate="date_booking ⊆ DATE"/>
+<org.eventb.core.invariant name="c" org.eventb.core.label="inv2" org.eventb.core.predicate="time_booking ⊆ TIME"/>
+<org.eventb.core.invariant name="'*" org.eventb.core.comment="subset of booking to exclude the serviced_car variable" org.eventb.core.label="inv3" org.eventb.core.predicate="booking_waiting ⊆ booking"/>
+<org.eventb.core.invariant name="j" org.eventb.core.comment="Total injection because one car has a sinle position and two cars cannot be at the same position" org.eventb.core.label="inv4" org.eventb.core.predicate="position ∈ booking_waiting ↣ POSITION"/>
+<org.eventb.core.invariant name="k" org.eventb.core.comment="the cardinal of ran(position) must be finite to that we can use max" org.eventb.core.label="inv5" org.eventb.core.predicate="finite(ran(position))"/>
+<org.eventb.core.invariant name="d" org.eventb.core.label="inv6" org.eventb.core.predicate="date_startRepair ⊆ DATE"/>
+<org.eventb.core.invariant name="e" org.eventb.core.label="inv7" org.eventb.core.predicate="time_startRepair ⊆ TIME"/>
+<org.eventb.core.invariant name="f" org.eventb.core.label="inv8" org.eventb.core.predicate="date_endRepair ⊆ DATE"/>
+<org.eventb.core.invariant name="g" org.eventb.core.label="inv9" org.eventb.core.predicate="time_endRepair ⊆ TIME"/>
+<org.eventb.core.event name="h" org.eventb.core.comment="To find the next car to be repaired given the booking dates" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="FindNextCar">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="c"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="The car should be in the booking list" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ booking_waiting"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="the place of next car to be repaired must be free" org.eventb.core.label="grd3" org.eventb.core.predicate="serviced_car = ∅"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="the car must be at the first place in the list of booking cars" org.eventb.core.label="grd2" org.eventb.core.predicate="position(c) = min(ran(position))"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="serviced_car ≔ {c}" org.eventb.core.comment="the next car to be repaired is this one" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="position ≔ {c} ⩤ position" org.eventb.core.comment="the car is removed from the list of car waiting for repair" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="booking_waiting ≔ booking_waiting ∖ {c}" org.eventb.core.comment="the chosen car is not waiting to be the next one any more" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="l" org.eventb.core.comment="contains the next car to be repaired" org.eventb.core.identifier="serviced_car"/>
+<org.eventb.core.invariant name="m" org.eventb.core.label="inv10" org.eventb.core.predicate="serviced_car ⊆ booking"/>
+<org.eventb.core.variable name="n" org.eventb.core.comment="list all the repairs for a given mechanic since a given date" org.eventb.core.identifier="repair_list"/>
+<org.eventb.core.invariant name="r" org.eventb.core.comment="Relation because at a same date several repairs can have been made" org.eventb.core.label="inv11" org.eventb.core.predicate="date_repair ∈ date_endRepair ↔ REPAIR"/>
+<org.eventb.core.event name="p" org.eventb.core.comment="To find all repairs made by a given mechanic since a given date" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="FindRepairs">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="m"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="given_date"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="m ∈ mechanic ∩ business"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="the given date must be a date where at least one repair has been made" org.eventb.core.label="grd2" org.eventb.core.predicate="given_date ∈ dom(position_date)"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="date_list ≔ {d∣d ∈ dom(position_date) ∧ position_date(d) &gt; position_date(given_date)}" org.eventb.core.comment="all the dates that are placed after the postition of the given date are in the date_list" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="repair_list ≔ mecha_repair[{m}] ∩ date_repair[date_list] " org.eventb.core.comment="list of repairs made by a given mechanic since a given date is the intersection of all the repairs made by the mechanic and all the repairs that have been made after the given date." org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="q" org.eventb.core.comment="relation to associate a repair to its finished date" org.eventb.core.identifier="date_repair"/>
+<org.eventb.core.invariant name="t" org.eventb.core.label="inv12" org.eventb.core.predicate="repair_list ⊆ REPAIR"/>
+<org.eventb.core.variable name="{" org.eventb.core.comment="function to order elements of date_endRepair" org.eventb.core.identifier="position_date"/>
+<org.eventb.core.invariant name="|" org.eventb.core.comment="Total injection because one date has a sinle position and two dates cannot be at the same position" org.eventb.core.label="inv13" org.eventb.core.predicate="position_date ∈ DATE ⤔ POSITION"/>
+<org.eventb.core.invariant name="'(" org.eventb.core.comment="the cardinal of ran(position_date) must be finite to that we can use max" org.eventb.core.label="inv14" org.eventb.core.predicate="finite(ran(position_date))"/>
+<org.eventb.core.invariant name="''" org.eventb.core.label="inv15" org.eventb.core.predicate="date_list ⊆ DATE"/>
+<org.eventb.core.variable name="~" org.eventb.core.comment="list elements of date_endRepair since a given date" org.eventb.core.identifier="date_list"/>
+<org.eventb.core.variable name="')" org.eventb.core.comment="record booked cars which are waiting to be serviced" org.eventb.core.identifier="booking_waiting"/>
+<org.eventb.core.invariant name="'," org.eventb.core.label="inv16" org.eventb.core.predicate="booking_waiting ∩ serviced_car = ∅"/>
+<org.eventb.core.invariant name="'+" org.eventb.core.comment="all the booked cars are either waiting to be the next car to be serviced or the next one to be serviced" org.eventb.core.label="inv17" org.eventb.core.predicate="booking_waiting ∪ serviced_car ⊆ booking"/>
+</org.eventb.core.machineFile>

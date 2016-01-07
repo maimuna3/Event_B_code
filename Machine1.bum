@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1416914392807" org.eventb.texttools.text_representation="MACHINE&#13;&#10;&#13;&#10;" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="business ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="customer_folder ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="booking ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="bay_allocate ≔ ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="car_repair ≔ ∅" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="allocate_bay_mechanic ≔ ∅" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="mecha_repair ≔ ∅" org.eventb.core.label="act9"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="(" org.eventb.core.comment="Record the registered users" org.eventb.core.identifier="business"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="Context1"/>
+<org.eventb.core.invariant name="," org.eventb.core.comment="set of registered users" org.eventb.core.label="inv1" org.eventb.core.predicate="business ⊆ USER"/>
+<org.eventb.core.event name="-" org.eventb.core.comment="To register a new mechanic" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RegisterMechanic">
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="s ∈ mechanic ∖ business"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="business ≔ business ∪ {s}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="s"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.comment="To delete a registered mechanic from the system" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DeRegisterMechanic">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="s"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="s ∈ mechanic ∩ business"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="business ≔ business ∖ {s}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="1" org.eventb.core.comment="To register a new customer" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RegisterCustomer">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="s"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="s ∈ customer ∖ business"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="business ≔ business ∪ {s}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="c"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ CAR ∖ ran(customer_folder)"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="customer_folder ≔ customer_folder ∪ {s ↦ c}" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="mechanic ∩ business ⊈ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="2" org.eventb.core.comment="To add a new car in a customer's folder" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="UpdateCar">
+<org.eventb.core.action name="'" org.eventb.core.assignment="customer_folder ≔ customer_folder ∪ {s ↦ c}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="s"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="s ∈ customer ∩ business"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="The car musn't be in the customer folder yet because otherwise it means that one car with will be related to two different names and it is not allowed" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ CAR ∖ ran(customer_folder)"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="c"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="To not register twice the same association" org.eventb.core.label="grd3" org.eventb.core.predicate="s ↦ c ∉ customer_folder"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="6" org.eventb.core.comment="Associate a customer and a least one car" org.eventb.core.identifier="customer_folder"/>
+<org.eventb.core.invariant name="V" org.eventb.core.label="inv18" org.eventb.core.predicate="mechanic ∩ business ⊆ mechanic"/>
+<org.eventb.core.invariant name="7" org.eventb.core.comment="relation between a customer and one or severals cars" org.eventb.core.label="inv3" org.eventb.core.predicate="customer_folder ∈ customer ↔ CAR"/>
+<org.eventb.core.variable name="8" org.eventb.core.comment="Record the booked car" org.eventb.core.identifier="booking"/>
+<org.eventb.core.invariant name="H" org.eventb.core.comment="a customer should be registered to register his car" org.eventb.core.label="inv4" org.eventb.core.predicate="dom(customer_folder) ⊆ business"/>
+<org.eventb.core.event name=":" org.eventb.core.comment="To make a booking for a car for a repair and associate a mechanic to this task" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="MakeBooking">
+<org.eventb.core.guard name="(" org.eventb.core.comment="The car should be already recorded in the system" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ ran(customer_folder)"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="c"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="A car can be booked only for one repair at one time" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∉ booking"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="booking ≔ booking ∪ {c}" org.eventb.core.comment="The car is booked" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="car_repair ≔ car_repair ∪ {c ↦ r}" org.eventb.core.comment="To record the repair on a booked car " org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="4" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name="5" org.eventb.core.comment=" Every repairs are different so a new repair can't be already associated with another car" org.eventb.core.label="grd3" org.eventb.core.predicate="r ∈ REPAIR ∖ ran(car_repair)"/>
+<org.eventb.core.parameter name="6" org.eventb.core.identifier="m"/>
+<org.eventb.core.guard name="7" org.eventb.core.label="grd4" org.eventb.core.predicate="m ∈ mechanic ∩ business"/>
+<org.eventb.core.action name="8" org.eventb.core.assignment="mecha_repair ≔ mecha_repair ∪ {m ↦ r}" org.eventb.core.comment="To record the repairs made by a mechanic" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="&gt;" org.eventb.core.comment="To remove the booked car from the booking folder when the repair is finished" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EndBooking">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="c"/>
+<org.eventb.core.guard name="4" org.eventb.core.comment="the car should be linked to a repair and a bay and a mechanic" org.eventb.core.label="grd4" org.eventb.core.predicate="c ∈ dom(car_repair) ∩ dom(allocate_bay_mechanic) ∩ booking"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="At the beginning the bay is occupied" org.eventb.core.label="grd3" org.eventb.core.predicate="bay ∈ BAY ∩ bay_allocate"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="m ∈ mechanic ∩ business"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="bay_allocate ≔ bay_allocate ∖ {bay}" org.eventb.core.comment="Free the allocated bay" org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="/" org.eventb.core.identifier="bay"/>
+<org.eventb.core.guard name="2" org.eventb.core.comment="the bay which is going to be released must be the bay where the work is finished. " org.eventb.core.label="grd2" org.eventb.core.predicate="bay ↦ m  ∈ allocate_bay_mechanic(c)"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="booking ≔ booking ∖ {c}" org.eventb.core.comment="the car is not in the booked list any more" org.eventb.core.label="act3"/>
+<org.eventb.core.parameter name="3" org.eventb.core.identifier="m"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="?" org.eventb.core.comment="To allocate a bay and a mechanic to a booked car" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AllocateBayMechanic">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="bay"/>
+<org.eventb.core.guard name="3" org.eventb.core.comment="The car must be recorded and in the booking list" org.eventb.core.label="grd5" org.eventb.core.predicate="c ∈ dom(allocate_bay_mechanic) ∩ booking"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="The chosen bay must be free" org.eventb.core.label="grd1" org.eventb.core.predicate="bay ∈ BAY ∖ bay_allocate"/>
+<org.eventb.core.parameter name="1" org.eventb.core.identifier="c"/>
+<org.eventb.core.parameter name="2" org.eventb.core.identifier="m"/>
+<org.eventb.core.guard name="9" org.eventb.core.label="grd10" org.eventb.core.predicate="m ∈ mechanic ∩ business"/>
+<org.eventb.core.action name="=" org.eventb.core.assignment="allocate_bay_mechanic(c) ≔ allocate_bay_mechanic(c) ∪ {bay ↦ m}" org.eventb.core.comment="The function links a car to one bay and one mechanic" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="bay_allocate ≔ bay_allocate ∪ {bay}" org.eventb.core.comment="The allocated bay isn't free any more" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="B" org.eventb.core.comment="Record which bay is occupied" org.eventb.core.identifier="bay_allocate"/>
+<org.eventb.core.invariant name="I" org.eventb.core.comment="car which are booked should ne associated to a customer" org.eventb.core.label="inv7" org.eventb.core.predicate="booking ⊆ ran(customer_folder) "/>
+<org.eventb.core.invariant name="C" org.eventb.core.comment="set of occupied bays" org.eventb.core.label="inv10" org.eventb.core.predicate="bay_allocate ⊆ BAY"/>
+<org.eventb.core.variable name="O" org.eventb.core.comment="Associate a car an its repair(s)" org.eventb.core.identifier="car_repair"/>
+<org.eventb.core.invariant name="P" org.eventb.core.comment="relation between a car which can have several repairs" org.eventb.core.label="inv14" org.eventb.core.predicate="car_repair ∈ CAR ↔ REPAIR"/>
+<org.eventb.core.invariant name="Q" org.eventb.core.comment="Cars which are booked must be associated with a customer" org.eventb.core.label="inv15" org.eventb.core.predicate="dom(car_repair) ⊆ ran(customer_folder)"/>
+<org.eventb.core.variable name="R" org.eventb.core.comment="Associate a car with one bay and one mechanic" org.eventb.core.identifier="allocate_bay_mechanic"/>
+<org.eventb.core.invariant name="S" org.eventb.core.comment="Curried function which associates a free bay and a registered mechanic to a booked car" org.eventb.core.label="inv16" org.eventb.core.predicate="allocate_bay_mechanic ∈ CAR ⤔ (BAY ⤔ mechanic)"/>
+<org.eventb.core.variable name="T" org.eventb.core.comment="Associate a mechanic his repair(s)" org.eventb.core.identifier="mecha_repair"/>
+<org.eventb.core.invariant name="U" org.eventb.core.comment="relation between a mechanic who can make severals repairs " org.eventb.core.label="inv17" org.eventb.core.predicate="mecha_repair ∈ mechanic ↔ REPAIR"/>
+</org.eventb.core.machineFile>

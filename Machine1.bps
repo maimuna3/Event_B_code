@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/inv18/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv15/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv16/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv17/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="RegisterMechanic/inv18/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="RegisterMechanic/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="DeRegisterMechanic/inv18/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="DeRegisterMechanic/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="RegisterCustomer/inv18/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="RegisterCustomer/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="RegisterCustomer/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="RegisterCustomer/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="RegisterCustomer/inv15/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="UpdateCar/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="UpdateCar/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="UpdateCar/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="UpdateCar/inv15/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MakeBooking/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MakeBooking/inv15/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MakeBooking/inv17/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EndBooking/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EndBooking/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="AllocateBayMechanic/inv16/INV" org.eventb.core.confidence="1" org.eventb.core.poStamp="55" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="AllocateBayMechanic/act5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="55" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

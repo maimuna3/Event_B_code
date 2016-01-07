@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="22">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="BAY" org.eventb.core.type="ℙ(BAY)"/>
+<org.eventb.core.poIdentifier name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.poIdentifier name="REPAIR" org.eventb.core.type="ℙ(REPAIR)"/>
+<org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="mechanic" org.eventb.core.type="ℙ(USER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Coursework/Context1.bpo|org.eventb.core.poFile#Context1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="22">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mechanic⊆USER" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="customer⊆USER" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="customer∩mechanic⊆(∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#0"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="customer∪mechanic⊆USER" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="USER⊆customer∪mechanic" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#2"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="mechanic⊈(∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#4"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

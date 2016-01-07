@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="22">
+<org.eventb.core.poIdentifier name="BAY" org.eventb.core.type="ℙ(BAY)"/>
+<org.eventb.core.poIdentifier name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.poIdentifier name="REPAIR" org.eventb.core.type="ℙ(REPAIR)"/>
+<org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="mechanic" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poPredicate name="mechanid" org.eventb.core.predicate="mechanic⊆USER" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="mechanie" org.eventb.core.predicate="customer⊆USER" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="mechanif" org.eventb.core.predicate="customer∩mechanic⊆(∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#0"/>
+<org.eventb.core.poPredicate name="mechanig" org.eventb.core.predicate="customer∪mechanic⊆USER" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="mechanih" org.eventb.core.predicate="USER⊆customer∪mechanic" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#2"/>
+<org.eventb.core.poPredicate name="mechanii" org.eventb.core.predicate="mechanic⊈(∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#4"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="30">
+<org.eventb.core.poIdentifier name="allocate_bay_mechanic" org.eventb.core.type="ℙ(CAR×ℙ(BAY×USER))"/>
+<org.eventb.core.poIdentifier name="bay_allocate" org.eventb.core.type="ℙ(BAY)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.poIdentifier name="business" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="car_repair" org.eventb.core.type="ℙ(CAR×REPAIR)"/>
+<org.eventb.core.poIdentifier name="customer_folder" org.eventb.core.type="ℙ(USER×CAR)"/>
+<org.eventb.core.poIdentifier name="mecha_repair" org.eventb.core.type="ℙ(USER×REPAIR)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv18/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="53">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanid"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mechanic∩(∅ ⦂ ℙ(USER))⊆mechanic" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#INITIALISATION\/inv18\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="53">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanid"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×CAR))∈customer ↔ CAR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="53">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanid"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(∅ ⦂ ℙ(USER×CAR))⊆(∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="53">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanid"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CAR))⊆ran(∅ ⦂ ℙ(USER×CAR))" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv15/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="53">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanid"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(∅ ⦂ ℙ(CAR×REPAIR))⊆ran(∅ ⦂ ℙ(USER×CAR))" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#INITIALISATION\/inv15\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="53">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanid"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CAR×ℙ(BAY×USER)))∈CAR ⤔ (BAY ⤔ mechanic)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#S"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#S"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#INITIALISATION\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv17/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="53">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanid"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×REPAIR))∈mechanic ↔ REPAIR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#U"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#U"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#INITIALISATION\/inv17\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD9"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanid" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="30">
+<org.eventb.core.poIdentifier name="business'" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="booking'" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.poIdentifier name="mecha_repair'" org.eventb.core.type="ℙ(USER×REPAIR)"/>
+<org.eventb.core.poIdentifier name="bay_allocate'" org.eventb.core.type="ℙ(BAY)"/>
+<org.eventb.core.poIdentifier name="car_repair'" org.eventb.core.type="ℙ(CAR×REPAIR)"/>
+<org.eventb.core.poIdentifier name="customer_folder'" org.eventb.core.type="ℙ(USER×CAR)"/>
+<org.eventb.core.poIdentifier name="allocate_bay_mechanic'" org.eventb.core.type="ℙ(CAR×ℙ(BAY×USER))"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanid" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanid" org.eventb.core.poStamp="30"/>
+<org.eventb.core.poSequent name="RegisterMechanic/inv18/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanie"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mechanic∩(business∪{s})⊆mechanic" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#-"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#RegisterMechanic\/inv18\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RegisterMechanic/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanie"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(customer_folder)⊆business∪{s}" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#-"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#RegisterMechanic\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanie" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poIdentifier name="business'" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="s" org.eventb.core.type="USER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanie" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanie" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈mechanic ∖ business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#-|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="DeRegisterMechanic/inv18/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanif"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mechanic∩(business ∖ {s})⊆mechanic" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#DeRegisterMechanic\/inv18\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="DeRegisterMechanic/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanif"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(customer_folder)⊆business ∖ {s}" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#DeRegisterMechanic\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanif" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poIdentifier name="business'" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="s" org.eventb.core.type="USER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanif" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanif" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈mechanic∩business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#.|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="RegisterCustomer/inv18/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mechanic∩(business∪{s})⊆mechanic" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#RegisterCustomer\/inv18\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RegisterCustomer/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customer_folder∪{s ↦ c}∈customer ↔ CAR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#RegisterCustomer\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RegisterCustomer/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(customer_folder∪{s ↦ c})⊆business∪{s}" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#RegisterCustomer\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RegisterCustomer/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking⊆ran(customer_folder∪{s ↦ c})" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#RegisterCustomer\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RegisterCustomer/inv15/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanig"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(car_repair)⊆ran(customer_folder∪{s ↦ c})" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#RegisterCustomer\/inv15\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanig" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poIdentifier name="business'" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="s" org.eventb.core.type="USER"/>
+<org.eventb.core.poIdentifier name="customer_folder'" org.eventb.core.type="ℙ(USER×CAR)"/>
+<org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanig" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanig" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈customer ∖ business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈CAR ∖ ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="mechanic∩business⊈(∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#1|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="UpdateCar/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanih"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customer_folder∪{s ↦ c}∈customer ↔ CAR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#UpdateCar\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="UpdateCar/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanih"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(customer_folder∪{s ↦ c})⊆business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#UpdateCar\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="UpdateCar/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanih"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking⊆ran(customer_folder∪{s ↦ c})" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#UpdateCar\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="UpdateCar/inv15/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanih"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(car_repair)⊆ran(customer_folder∪{s ↦ c})" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#UpdateCar\/inv15\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanih" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poIdentifier name="s" org.eventb.core.type="USER"/>
+<org.eventb.core.poIdentifier name="customer_folder'" org.eventb.core.type="ℙ(USER×CAR)"/>
+<org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanih" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanih" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈customer∩business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#2|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈CAR ∖ ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#2|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="s ↦ c∉customer_folder" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#2|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="MakeBooking/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanii"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking∪{c}⊆ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#:"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#MakeBooking\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="MakeBooking/inv15/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanii"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(car_repair∪{c ↦ r})⊆ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#:"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#MakeBooking\/inv15\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="MakeBooking/inv17/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanii"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mecha_repair∪{m ↦ r}∈mechanic ↔ REPAIR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#U"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#:"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#U"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#MakeBooking\/inv17\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD9"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanii" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poIdentifier name="m" org.eventb.core.type="USER"/>
+<org.eventb.core.poIdentifier name="booking'" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.poIdentifier name="mecha_repair'" org.eventb.core.type="ℙ(USER×REPAIR)"/>
+<org.eventb.core.poIdentifier name="car_repair'" org.eventb.core.type="ℙ(CAR×REPAIR)"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="REPAIR"/>
+<org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanii" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanii" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#:|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∉booking" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#:|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="r∈REPAIR ∖ ran(car_repair)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#:|org.eventb.core.guard#5"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="m∈mechanic∩business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#:|org.eventb.core.guard#7"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="EndBooking/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTHYPallocate_bay_mechanij)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(allocate_bay_mechanic)∧allocate_bay_mechanic∈CAR ⇸ ℙ(BAY × USER)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#&gt;|org.eventb.core.guard#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#&gt;|org.eventb.core.guard#2"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTHYPallocate_bay_mechanij)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="EndBooking/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanij"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking ∖ {c}⊆ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#&gt;"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#EndBooking\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanij" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poIdentifier name="m" org.eventb.core.type="USER"/>
+<org.eventb.core.poIdentifier name="booking'" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.poIdentifier name="bay_allocate'" org.eventb.core.type="ℙ(BAY)"/>
+<org.eventb.core.poIdentifier name="bay" org.eventb.core.type="BAY"/>
+<org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPallocate_bay_mechanij)" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanij" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈dom(car_repair)∩dom(allocate_bay_mechanic)∩booking" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#&gt;|org.eventb.core.guard#4"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bay∈BAY∩bay_allocate" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#&gt;|org.eventb.core.guard#0"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="m∈mechanic∩business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#&gt;|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanij" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTHYPallocate_bay_mechanij)" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="bay ↦ m∈allocate_bay_mechanic(c)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#&gt;|org.eventb.core.guard#2"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="AllocateBayMechanic/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanik"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="allocate_bay_mechanic{c ↦ allocate_bay_mechanic(c)∪{bay ↦ m}}∈CAR ⤔ (BAY ⤔ mechanic)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#S"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#?"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#S"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poSequent#AllocateBayMechanic\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AllocateBayMechanic/act5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanik"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(allocate_bay_mechanic)∧allocate_bay_mechanic∈CAR ⇸ ℙ(BAY × USER)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#?|org.eventb.core.action#="/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#?|org.eventb.core.action#="/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTALLHYPallocate_bay_mechanik"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTallocate_bay_mechanik" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poIdentifier name="m" org.eventb.core.type="USER"/>
+<org.eventb.core.poIdentifier name="bay_allocate'" org.eventb.core.type="ℙ(BAY)"/>
+<org.eventb.core.poIdentifier name="bay" org.eventb.core.type="BAY"/>
+<org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
+<org.eventb.core.poIdentifier name="allocate_bay_mechanic'" org.eventb.core.type="ℙ(CAR×ℙ(BAY×USER))"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPallocate_bay_mechanik" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#EVTIDENTallocate_bay_mechanik" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈dom(allocate_bay_mechanic)∩booking" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#?|org.eventb.core.guard#3"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bay∈BAY ∖ bay_allocate" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#?|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="m∈mechanic∩business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.event#?|org.eventb.core.guard#9"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Coursework/Machine1.bpo|org.eventb.core.poFile#Machine1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="55">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="business⊆USER" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="mechanic∩business⊆mechanic" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="customer_folder∈customer ↔ CAR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="dom(customer_folder)⊆business" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="booking⊆ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#I"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="bay_allocate⊆BAY" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="car_repair∈CAR ↔ REPAIR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#P"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="dom(car_repair)⊆ran(customer_folder)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="allocate_bay_mechanic∈CAR ⤔ (BAY ⤔ mechanic)" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#S"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="mecha_repair∈mechanic ↔ REPAIR" org.eventb.core.source="/Coursework/Machine1.bum|org.eventb.core.machineFile#Machine1|org.eventb.core.invariant#U"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
